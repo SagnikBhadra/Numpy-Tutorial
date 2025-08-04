@@ -77,8 +77,42 @@ r1 = np.repeat(j, 3, axis=0)
 print(r1)
 
 # Create test matrix
-
 test = np.ones((5, 5))
 test[1:4, 1:4] = 0
 test[2,2] = 9
 print(test)
+
+# Be careful when copying
+# b = a is a shallow copy
+k = np.array([1, 2, 3])
+l = k.copy()
+l[0] = 100
+print(k)
+
+# Mathematics
+m = np.array([1, 2, 3, 4])
+print(f"{m + [1, 0, 1, 0]}")
+print(m * 2)
+print(np.sin(m))
+
+# Linear Algebra
+print("Linear Algebra\n")
+m = np.full((2, 3), 1)
+n = np.full((3, 2), 2)
+print(m)
+print(n)
+
+# Matrix multiplication
+print(np.matmul(m, n))
+
+# Find the determinant
+o = np.identity(5)
+print(np.linalg.det(o))
+
+
+# Statictics
+print("Statistics\n")
+
+print(np.min(a, axis=1))
+print(np.max(a))
+print(np.sum(a, axis=0))
