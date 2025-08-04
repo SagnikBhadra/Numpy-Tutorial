@@ -31,3 +31,16 @@ print(a)
 # Changes Series
 a[:, 2] = 5
 print(a)
+
+# 3-D numpy array
+b = np.array([[[1,2], 
+               [3, 4]],
+              [[5, 6], 
+               [7, 8]]])
+
+print(b[0, 1, 1])
+
+# Replace
+b[:, 0, :] = [[9, 9], [8, 8]]
+print(b)
+
