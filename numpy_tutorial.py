@@ -44,3 +44,41 @@ print(b[0, 1, 1])
 b[:, 0, :] = [[9, 9], [8, 8]]
 print(b)
 
+# Types of arrays
+c = np.zeros((2, 3))
+print(c)
+
+d = np.ones((2, 3))
+print(d)
+
+# Other numbers than 0 or 1
+e = np.full((2, 3), 99)
+print(e)
+
+# Full like
+f = np.full_like(a, 4)
+print(f)
+
+# Random decimal numbers
+g = np.random.rand(4, 2)
+print(g)
+
+# Random interger numbers
+h = np.random.randint(4, 8, size=(3, 3))
+print(h)
+
+# Identity matrix
+i = np.identity(5)
+print(i)
+
+# Repeating
+j = np.array([[1,2,3]])
+r1 = np.repeat(j, 3, axis=0)
+print(r1)
+
+# Create test matrix
+
+test = np.ones((5, 5))
+test[1:4, 1:4] = 0
+test[2,2] = 9
+print(test)
