@@ -116,3 +116,45 @@ print("Statistics\n")
 print(np.min(a, axis=1))
 print(np.max(a))
 print(np.sum(a, axis=0))
+
+#Reorganizing Arrays
+
+print("Reorganizing Arrays")
+before = np.array([[1, 2, 3, 4], [5, 6, 7, 8]])
+print(before)
+
+after = np.reshape(before, (8, 1))
+print(after)
+
+# Vertical and Horizonal stacking
+v1 = np.array([1, 2, 3, 4])
+v2 = np.array([5, 6, 7, 8])
+stacked = np.vstack([v1, v2])
+print(stacked)
+
+h1 = np.ones((2, 4))
+h2 = np.zeros((2, 2))
+stacked = np.hstack((h1, h2))
+print(stacked)
+
+# Read from files
+
+file_data = np.genfromtxt('data.txt', delimiter=',')
+file_data_int = file_data.astype('int32')
+print(file_data_int)
+print(file_data_int > 50)
+print(file_data_int[file_data_int > 50])
+
+# Can index with a list in numpy
+a = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9])
+print(a[[1, 2, 7]])
+
+print(np.any(file_data_int > 50, axis=0))
+print(np.all(file_data_int > 50, axis=0))
+
+# Combining conditionals
+combined_conditional = ((file_data_int > 50) & (file_data_int < 100))
+print(combined_conditional)
+
+negated_combined_conditional = (~((file_data_int > 50) & (file_data_int < 100)))
+print(negated_combined_conditional)
